@@ -37,3 +37,110 @@ The year-over-year comparison shows only a 1% increase in total sales revenue an
 While various retention and engagement strategies (such as loyalty programs, personalized offers, and improved customer service) could be implemented, their effectiveness depends on whether they are applied to the right customer segments. Therefore, the business objective of this analysis is to enable targeted and resource-efficient customer retention and value-growth strategies by segmenting customers based on their purchasing value and behavioral patterns.
 
 By applying customer segmentation, the store can not only retain high-value customers but also systematically grow customer lifetime value across all segments through more precise, data-driven engagement and revenue optimization initiatives.
+
+## 4. Insight Deep Dive
+A. Customer & Revenue Concentration
+
+Headline: Revenue is heavily concentrated in a very small share of customers.
+
+Top 2% of customers account for ~36% of yearly revenue; top 20% account for >73%, while the bottom 50% contribute only ~8%.
+
+Overall growth is stagnant: total sales ↑ ~1% YoY and customer count ↑ ~1%, showing little expansion beyond the existing base.
+
+Business implication: the store’s revenue is highly dependent on a small set of customers—loss or disengagement from these customers creates outsized impact.
+
+[CHART: Pareto / cumulative revenue by customer percentile]
+
+[TABLE: Revenue share by percentile buckets (Top 2%, Top 20%, Bottom 50%)]
+
+B. Churn, Acquisition & Cohort Revenue Impact
+
+Headline: Net customer churn and cohort-level revenue shifts show value loss despite similar headcount.
+
+The store lost 1,526 existing customers and acquired 1,582 new customers in Year 2; however, many of the churned customers were high-value (76 from prior Year1 top 20%, 5 from top 2%).
+
+Although new customers generated revenue (~£1,350k), identified-customer revenue declined ~2.7% YoY; retained customers spent ~8% less in Year 2, and Year1 top-20% spent ~13.76% less (~£768k loss).
+
+Net effect: headcount stability masks an erosion in customer value—retention (and re-engagement) of high-value cohorts is critical.
+
+[CHART: Cohort flow / Sankey of Retained → Lost → New with revenue amounts]
+
+[TABLE: Year1 vs Year2 revenue by cohort (Retained / Lost / New)]
+
+C. Anonymous (Non-identified) Customer Impact
+
+Headline: Growing share of anonymous transactions increases revenue uncertainty and limits retention actions.
+
+Non-identified transactions rose to 24.5% of transactions in Year 2 (from 19.5% in Year 1); their revenue share rose to ~15.14% (from 11.58%).
+
+Because these customers lack identifiers, the store cannot observe purchasing patterns or run targeted retention—limiting lifetime value optimization.
+
+Business implication: reducing anonymous transactions or capturing identifiers will unlock targeted marketing and repeat-purchase strategies.
+
+[CHART: Identified vs Non-identified — transactions and revenue share by period]
+
+[TABLE: Revenue contribution and average order value (AOV) for identified vs non-identified]
+
+D. Seasonality & Customer Behavior Patterns
+
+Headline: Strong seasonality (Fall/November peak) and heterogeneous buyer types complicate one-size-fits-all segmentation.
+
+Fall accounts for ~36.9% of revenue with a November peak; other seasons average ≈21% each, and Fall also shows spikes in customers and transactions.
+
+Many top customers are wholesalers with diverse buying rhythms (frequent small orders, periodic bulk orders, or seasonal-only purchases).
+
+Implication: basic RFM alone is insufficient — wholesalers distort frequency/recency signals and require behavior-aware segmentation.
+
+[CHART: Monthly revenue and transaction counts (seasonal decomposition)]
+
+[CHART: Example RFM scatter with wholesaler vs retail customer markers]
+
+E. Discounting & Promotional Usage
+
+Headline: Discounting is rarely used and concentrated in a few customers; promotional coverage is minimal.
+
+Only 56 customers recorded discounted transactions (very limited use of discounts).
+
+Low promotional penetration suggests missed opportunities for targeted offers to retain or reactivate specific cohorts.
+
+[TABLE: Discounted transactions — count, revenue, and customer list]
+
+[CHART: Discount incidence vs revenue change by cohort]
+
+F. Product Revenue Concentration & SKU Dependence
+
+Headline: Sales are concentrated in a small subset of SKUs—product portfolio risk mirrors customer concentration.
+
+4,737 SKUs sold over two years; top 5% of SKUs generate ~45.5% of revenue, top 20% generate ~78%, bottom 50% only ~4.6%.
+
+The store is dependent on a narrow product set for revenue—SKU-level failures or stockouts could have large revenue implications.
+
+[CHART: Pareto of SKU revenue share]
+
+[TABLE: Top 20 SKUs by revenue and share]
+
+G. Segment-Specific Behavioral Insight (Hibernating Customers)
+
+Headline: Hibernating customers concentrate spend in low-value categories, potentially explaining churn.
+
+“Hibernating” cohort spends predominantly on the “Bottom” product category across months in Year 1.
+
+Possible interpretation: low-ticket purchasing mix reduces engagement and increases likelihood of churn when product relevance or availability declines.
+
+[CHART: Monthly spend by product category for Hibernating cohort]
+
+[TABLE: Hibernating cohort product category breakdown]
+
+H. Cancellations & Returns — Distribution and Impact
+
+Headline: Cancellations are widespread across segments but do not appear to be the primary driver of customer loss.
+
+High percentages of cancellations exist across segments (e.g., ~94% of VIPs, 90% of Elites have had at least one cancellation).
+
+Categorizing cancellation revenue: 73.26% of cancellation revenue loss falls into a “good” group (customers with stable or only slightly declining net revenue), 17.92% in the “bad” group (lost/declining customers), 8.82% others.
+
+Conclusion: cancellations alone are unlikely to explain most customer churn; other factors (value decline, competition, product fit) are likely contributors.
+
+[CHART: Cancellation revenue waterfall by customer group (Good / Bad / Other)]
+
+[TABLE: Cancellation incidence and subsequent retention rates by segment]

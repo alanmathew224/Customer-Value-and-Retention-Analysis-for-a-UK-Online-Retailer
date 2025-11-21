@@ -42,17 +42,13 @@ By applying customer segmentation, the store can not only retain high-value cust
 A. Customer & Revenue Concentration
 
 Headline: Revenue is heavily concentrated in a very small share of customers.
- 
 
 - Top 2% of customers account for ~36% of yearly revenue; top 20% account for >73%, while the bottom 50% contribute only ~8%.
 
 - Overall growth is stagnant: total sales ↑ ~1% YoY and customer count ↑ ~1%, showing little expansion beyond the existing base.
 
 - Business implication: the store’s revenue is highly dependent on a small set of customers—loss or disengagement from these customers creates outsized impact.
-
-[CHART: Pareto / cumulative revenue by customer percentile]
-
-[TABLE: Revenue share by percentile buckets (Top 2%, Top 20%, Bottom 50%)]
+<img width="623" height="463" alt="CustomerPareto" src="https://github.com/user-attachments/assets/9d5bc9fd-1d28-4400-9ac3-21c4b976bfaa" />
 
 B. Churn, Acquisition & Cohort Revenue Impact
 

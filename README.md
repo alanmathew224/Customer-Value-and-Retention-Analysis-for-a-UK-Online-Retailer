@@ -79,8 +79,7 @@ Total Transactions	1607	1360	-15%	21974	20772	-5%
 Total Quantity	268550	390479	45%	5160372	4671671	-9%
 Unique Products	3494	3277	-6%	4011	3669	-9%
 AverageOrderValue	 £659.28 	 £1,032.05 	57%	 £367.98 	 £378.74 	3%
-<img width="922" height="169" alt="image" src="https://github.com/user-attachments/assets/c796f46f-719b-4b8a-9ce2-98481b9d55fd" />
-
+<img width="850" height="169" alt="image" src="https://github.com/user-attachments/assets/c61daa8c-8b49-4018-ba69-bb0dbe7a0f89" />
 
 D. Seasonality & Customer Behavior Patterns
 

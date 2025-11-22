@@ -72,7 +72,7 @@ Headline: Growing share of anonymous transactions increases revenue uncertainty 
 
 - Business implication: reducing anonymous transactions or capturing identifiers will unlock targeted marketing and repeat-purchase strategies.
 
-<img width="850" height="169" alt="image" src="https://github.com/user-attachments/assets/c61daa8c-8b49-4018-ba69-bb0dbe7a0f89" />
+  <img width="850" height="169" alt="image" src="https://github.com/user-attachments/assets/e7947317-c3e5-4f0e-a404-c083750c8a44" />
 
 D. Seasonality & Customer Behavior Patterns
 

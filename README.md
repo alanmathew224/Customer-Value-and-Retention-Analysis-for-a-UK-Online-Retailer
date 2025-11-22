@@ -71,6 +71,14 @@ Headline: Growing share of anonymous transactions increases revenue uncertainty 
 - Because these customers lack identifiers, the store cannot observe purchasing patterns or run targeted retention—limiting lifetime value optimization.
 
 - Business implication: reducing anonymous transactions or capturing identifiers will unlock targeted marketing and repeat-purchase strategies.
+Category	Non-Identified			Identified		
+Year	year1	year2		year1	year2	
+TotalRevenue	 £1,059,460.82 	 £1,403,593.69 		 £8,086,061.14 	 £7,867,131.92 	
+TotalTransactions	1607	1360		21974	20772	
+TotalQuantity	268550	390479		5160372	4671671	
+UniqueProducts	3494	3277		4011	3669	
+<img width="845" height="145" alt="image" src="https://github.com/user-attachments/assets/10f717d1-afb3-4035-8e62-a41812cb5781" />
+
 
 [CHART: Identified vs Non-identified — transactions and revenue share by period]
 

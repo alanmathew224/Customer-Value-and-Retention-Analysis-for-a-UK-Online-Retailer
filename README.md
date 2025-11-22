@@ -67,8 +67,8 @@ C. Anonymous (Non-identified) Customer Impact
 Headline: Growing share of anonymous transactions increases revenue uncertainty and limits retention actions.
 
 - Non-identified transactions rose to 24.5% of transactions in Year 2 (from 19.5% in Year 1); their revenue share rose to ~15.14% (from 11.58%).
-
-- Because these customers lack identifiers, the store cannot observe purchasing patterns or run targeted retention—limiting lifetime value optimization.
+  
+- Anonymous customers in the second year show a 57% higher Average Order Value, reaching £1,032.50, which is higher than the AOV of Elite customers (£931.20). This suggests that anonymity does not equate to low-value behavior; on the contrary, it may represent a missed opportunity for customer identification and targeted nurturing.
 
 - Business implication: reducing anonymous transactions or capturing identifiers will unlock targeted marketing and repeat-purchase strategies.
 
@@ -117,6 +117,10 @@ Headline: Hibernating customers concentrate spend in low-value categories, poten
 - “Hibernating” cohort spends predominantly on the “Bottom” product category across months in Year 1.
 
 - Possible interpretation: low-ticket purchasing mix reduces engagement and increases likelihood of churn when product relevance or availability declines.
+
+- Customers flagged as having “Unknown” frequency behavior—those who purchase fewer than five times—allocate most of their spending to Mid-tier and Bottom-tier products.
+
+- In contrast, Premium, Elite, and VIP segments direct the majority of their spending toward Top-tier products, indicating a clear value stratification across behavioral groups.
 
 [CHART: Monthly spend by product category for Hibernating cohort]
 

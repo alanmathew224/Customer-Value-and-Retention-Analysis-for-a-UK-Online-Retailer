@@ -28,9 +28,9 @@ This structure allows for multi-dimensional analysis, including cohort tracking,
 ## 3. Executive Summary
 The dataset originates from an online retail store based in the United Kingdom that specializes in gifts and home decoration products. The analysis covers two years of transaction records, from December 2009 to November 2011, including detailed information on products, transaction dates, quantities, pricing, and customer identifiers. For comparison purposes, the dataset is divided into two periods:
 
-Year 1: December 1, 2009 – November 30, 2010
+- Year 1: December 1, 2009 – November 30, 2010
 
-Year 2: December 1, 2010 – November 30, 2011
+- Year 2: December 1, 2010 – November 30, 2011
 
 The year-over-year comparison shows only a 1% increase in total sales revenue and a 1% increase in the number of customers, indicating stagnant growth. When focusing exclusively on identified customers, revenue declined by 2% in the second year. Additionally, the store lost 1,526 customers (35.78%) while acquiring 1,582 new customers, and a considerable portion of the customers who churned were high-value customers. This highlights that the store is not effectively retaining and developing the value of its customer base.
 

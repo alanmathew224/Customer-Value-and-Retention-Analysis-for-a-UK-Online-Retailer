@@ -1,4 +1,12 @@
+## Introduction
 
+This document provides the detailed breakdown of all recommendations summarized in the Recommendation section of the main README.md. Each subsection below expands on the strategic actions, campaign guidelines, and operational improvements proposed for strengthening customer retention, accelerating revenue growth, and improving overall data-driven decision-making.
+
+## 1. Marketing Campaign Recommendation
+
+### 1.1 Segment × Status Campaign Matrix
+
+The table below outlines recommended marketing tactics by customer segment and lifecycle status, including the proposed campaign type, primary KPIs, preferred channels, and example offers. This matrix is intended to guide the execution of highly contextual and ROI-oriented campaigns.
 
 | Segment     | Status          | Priority | Campaign                     | Tactics                                                        | Channels                              | Timing                | Offer Example                                          | Key KPI                                | Customer Count | Total CLTV          | Average CLTV       |
 | ----------- | --------------- | -------- | ---------------------------- | -------------------------------------------------------------- | ------------------------------------- | --------------------- | ------------------------------------------------------ | -------------------------------------- | -------------- | ------------------- | ------------------ |
@@ -19,6 +27,9 @@
 | Hibernating | Can't Lose Them | Critical | Save & Retain (Top priority) | Dedicated AM outreach, custom offers, contract-like incentives | Email, Ads, Push                      | Immediate / Ongoing   | Volume discounts, coupons                              | Activation, CAC                        | 3              |  £       47,440.08  |  £    15,813.36    |
 | Hibernating | Hibernating     | Low      | Re-activation (low-touch)    | Re-engagement emails, seasonal promos                          | Email, Ads, Push                      | Quarterly             | Volume discounts, coupons                              | Activation, CAC                        | 1460           |  £     653,246.69   |  £          447.43 |
 
+### 1.2 Behavioral-Based Campaign Guidelines
+
+The second table below provides offer guidelines and campaign principles based on customer behavioral patterns (e.g., frequency flag, product-tier preference, spending trajectory). This serves as a reference for tailoring campaign offers to each behavioral profile, ensuring consistency and alignment with observed purchasing drivers.
 
 | Behavior                | Tactics                                                                                                        |
 | ----------------------- | -------------------------------------------------------------------------------------------------------------- |
@@ -28,3 +39,7 @@
 | Low Frequency Buyer     | Nudge campaigns, limited-time discounts, content to increase relevance, cross-sell complementary items         |
 | Reguler Frequency Buyer | Loyalty point accelerators, referral bonuses, personalized recommendations                                     |
 | High Frequency Buyer    | Exclusive offers, early access to launches, VIP events, higher-tier loyalty benefits                           |
+
+## 2. Data & Analytics Pipeline Improvements
+
+

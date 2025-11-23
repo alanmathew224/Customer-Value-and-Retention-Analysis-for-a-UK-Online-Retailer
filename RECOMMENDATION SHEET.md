@@ -42,4 +42,42 @@ The second table below provides offer guidelines and campaign principles based o
 
 ## 2. Data & Analytics Pipeline Improvements
 
+To strengthen the reliability of future analyses and enable more precise customer-level activation, several structural improvements to the data and analytics pipeline are recommended:
 
+### a. Introduce a dedicated discount field in the transaction table
+Implementing an explicit discount column ensures that discounted vs. non-discounted behaviors can be tracked consistently across customers, segments, and product categories. This prevents misclassification and enables discount-elasticity modelling.
+
+### b. Standardize cancellation/return invoice formatting
+Every cancellation invoice should mirror the original InvoiceNo but begin with the prefix “C”. This enforces transparent linkage between original and reversed transactions, simplifying return-rate analytics, churn/retention modelling, and revenue netting.
+
+### c. Establish robust Product and Customer Master Dimensions
+Create unified dimension tables to prevent inconsistencies and to support scalable analytics:
+
+- Product Dimension: Name, Category, Specifications (if available), Date Added, Price, Previous Price, Price Change Date(s).
+- Customer Dimension: Name (if available), Email, Country, Join Date, and other stable identifiers.
+These dimensions will serve as single sources of truth and eliminate ambiguity across transactional systems.
+
+### d. Enforce one-to-one mapping between StockCode, Description, and UnitPrice
+Each StockCode must consistently correspond to a single Description and UnitPrice. Eliminating duplicated or misaligned product definitions prevents analytic distortion in product-mix modelling, profitability calculation, and cross-category insights.
+
+### e. Create a Promotion Master Table
+Maintain a table including promo_id, validity window, promo type, and target segments. This makes historical promotion evaluation possible, supports future campaign A/B tests, and streamlines cross-team coordination (marketing, finance, analytics).
+
+### f. Add ETL/CDC steps for identity resolution and data hygiene
+Enhance the pipeline with processes to:
+- Deduplicate customer records
+- Normalize email addresses
+- Map cookies/device identifiers
+- Flag anomalous rows or outliers
+These steps improve the accuracy of segmentation models and ensure that “anonymous” customers are reduced over time through better matching.
+
+### g. Audit and Improve Identifier Capture Mechanisms
+This aligns with the finding that anonymous customers have large AOV.
+
+Technical Recommendation:
+- Improve checkout form UX
+- Require minimal identifier (e.g., email) for high-ticket purchases
+- Enable soft-login or one-tap identification
+
+### i. Define a Central Business Glossary & Metrics Dictionary
+To avoid differences in definitions between teams (e.g. net revenue, active customers, churn window, premium customers, etc.), all definitions must be standardized.

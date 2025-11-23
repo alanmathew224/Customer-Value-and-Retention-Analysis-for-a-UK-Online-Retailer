@@ -114,7 +114,7 @@ Headline: Discounting is rarely used and concentrated in a few customers; promot
 
 - Low promotional penetration suggests missed opportunities for targeted offers to retain or reactivate specific cohorts.
 
-<img width="548" height="516" alt="DiscountChart" src="https://github.com/user-attachments/assets/c9183b81-00f7-4651-80f3-d29bc3a856ae" />
+<img width="627" height="343" alt="DiscountChart" src="https://github.com/user-attachments/assets/a19c0658-bc9d-4b3d-9148-b65d8ba94692" />
 
 #### B. Segment-Specific Behavioral Insight (Hibernating Customers)
 
@@ -127,8 +127,6 @@ Headline: Hibernating customers concentrate spend in low-value categories, poten
 - In contrast, Premium, Elite, and VIP segments direct the majority of their spending toward Top-tier products, indicating a clear value stratification across behavioral groups.
 
 - Possible interpretation: low-ticket purchasing mix reduces engagement and increases likelihood of churn when product relevance or availability declines.
-
-
 
 #### C. Cancellations & Returns — Distribution and Impact
 
@@ -143,5 +141,3 @@ Headline: Cancellations are widespread across segments but do not appear to be t
 <img width="591" height="504" alt="CancellationPieChart" src="https://github.com/user-attachments/assets/071436d4-5480-49cc-964b-13c4d4eab5e3" />
 
 - Conclusion: cancellations alone are unlikely to explain most customer churn; other factors (value decline, competition, product fit) are likely contributors.
-
-

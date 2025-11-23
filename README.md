@@ -1,115 +1,121 @@
 # Data-Analyst-Project
 Exploratory data analysis for an online store based in UK.
 
-## 1. BACKGROUND AND OVERVIEW
-This project analyzes two years of transaction data from an online retail store to identify key business issues and uncover their root causes. The objective is to derive insights that can inform strategic recommendations aimed at resolving existing challenges and preventing similar issues from occurring in the future.
+## TL;DR
 
-## 2. DATA STRUCTURE OVERVIEW
-The dataset comprises two years of transactional records from the online retail store (December 1, 2009 – December 19, 2011). It includes item-level sales data with associated customer identifiers, providing a basis for customer-level and product-level analysis. The key fields are as follows:
+Quick summary: Revenue growth is flat and the business is highly dependent on a very small set of customers and products. Targeted retention and identification of anonymous buyers are the highest-impact levers.
 
-- InvoiceNo — Transaction identifier at the invoice level.
-- StockCode (SKU) — Unique product-level identifier used for inventory tracking.
-- Description — Text label describing the product.
-- Quantity — Number of units purchased in the transaction line.
-- InvoiceDate — Timestamp capturing the exact date and time of purchase.
-- UnitPrice — Price per unit of the product at the time of sale.
-- CustomerID — Encoded customer identifier enabling longitudinal customer tracking.
-- Country — Geographic location of the customer.
+Key metrics:
+- YoY revenue: +1% total; identified-customers revenue: −2.7% YoY.
+- Customer headcount: +1% (4264 → 4320); lost 1,526 customers (35.8%) vs 1,582 new customers.
+- Revenue concentration: top 2% ≈ 36% of revenue; top 20% > 73%.
+- Anonymous transactions: 24.5% of transactions in Year 2 (revenue share ≈ 15.1%); anonymous AOV £1,032.50 (vs Elite £931.20).
+- SKU concentration: top 5% SKUs ≈ 45.5% of revenue.
 
-This structure allows for multi-dimensional analysis, including cohort tracking, sales trend evaluation, customer lifetime value estimation, and segmentation based on behavioral and monetary patterns.
+Business ask: Prioritize targeted retention for high-value cohorts, convert anonymous buyers into identified customers, and improve data quality to enable measurement and personalization.
 
-## 3. EXECUTIVE SUMMARY
+## Table of Contents
+
+1. Background & Overview
+2. Executive summary (WHAT / Business objective)
+3. Key segment metrics (Year‑2 snapshot)
+4. Insight Deep Dive — WHAT (key findings) + WHY (drivers / root causes)
+5. Data structure overview (short)
+6. Methodology / How to reproduce / Limitations / Metric definitions
+7. Recommendations (short action summary + link to Recommendation.md)
+8. Additional files & artifacts
+
+## 1. Background and Overview
+This project analyses two years of transaction-level data from a UK-based online retailer (gifts & home decoration). The goal is to surface business-critical findings and propose targeted, measurable actions to improve retention, increase customer lifetime value, and reduce revenue risk.
+
+Dataset scope: two-year transaction history (item-level: invoice, SKU, qty, unit price, customer identifier, timestamp, country). [See Data Structure Overview below.]
+
+## 2. Data Structure Overview
+The dataset comprises two years of transactional records from the online retail store (December 1, 2009 – December 19, 2011). Core fields: InvoiceNo, StockCode (SKU), Description, Quantity, InvoiceDate, UnitPrice, CustomerID, Country.
+
+Recommended additions (in pipeline): discount flag, normalized customer contact fields, promo table, canonical product master, cancellation linkage via standardized invoice IDs.
+
+## 3. Executive Summary
 The dataset originates from an online retail store based in the United Kingdom that specializes in gifts and home decoration products. The analysis covers two years of transaction records, from December 2009 to November 2011, including detailed information on products, transaction dates, quantities, pricing, and customer identifiers. For comparison purposes, the dataset is divided into two periods:
-
 - Year 1: December 1, 2009 – November 30, 2010
 - Year 2: December 1, 2010 – November 30, 2011
 
-The year-over-year comparison shows only a 1% increase in total sales revenue and a 1% increase in the number of customers, indicating stagnant growth. When focusing exclusively on identified customers, revenue declined by 2% in the second year. Additionally, the store lost 1,526 customers (35.78%) while acquiring 1,582 new customers, and a considerable portion of the customers who churned were high-value customers. This highlights that the store is not effectively retaining and developing the value of its customer base.
+Business objective: Enable targeted and resource-efficient customer retention and value-growth strategies by delivering reliable customer segmentation (value + behavioral), converting high-AOV anonymous buyers into identified customers, and creating measurement-ready campaigns.
 
-While various retention and engagement strategies (such as loyalty programs, personalized offers, and improved customer service) could be implemented, their effectiveness depends on whether they are applied to the right customer segments. Therefore, the business objective of this analysis is to enable targeted and resource-efficient customer retention and value-growth strategies by segmenting customers based on their purchasing value and behavioral patterns.
+### Key segment metrics (Year‑2 snapshot)
+High-level result: Minimal year-over-year growth masks a decline in value among identified customers and the loss of many high-value accounts. Segmentation and data improvements are required to direct retention spend efficiently.
+Year‑2 segment snapshot: (summary table / key numbers)
 
-By applying customer segmentation, the store can not only retain high-value customers but also systematically grow customer lifetime value across all segments through more precise, data-driven engagement and revenue optimization initiatives.
+<img width="927" height="169" alt="image" src="https://github.com/user-attachments/assets/0f837c42-ff05-4252-a1df-38fb4fdfe38e" />
 
-## 4. INSIGHT DEEP DIVE
+## 4. Insight Deep Dive — WHAT (Key findings) + WHY (Drivers & root causes)
 
-### WHAT?
-#### A. Customer & Revenue Concentration
 
-Headline: Revenue is heavily concentrated in a very small share of customers.
+### 4.1 Revenue & customer concentration
 
-- Top 2% of customers account for ~36% of yearly revenue; top 20% account for >73%, while the bottom 50% contribute only ~8%.
-- Overall growth is stagnant: total sales ↑ ~1% YoY and customer count ↑ ~1%, showing little expansion beyond the existing base.
-- Business implication: the store’s revenue is highly dependent on a small set of customers—loss or disengagement from these customers creates outsized impact.
+Takeaway: Revenue is highly concentrated—small customer cohorts drive most revenue; retention of these cohorts is critical.
+
+- Top 2% ≈ 36% of revenue; top 20% > 73%; bottom 50% ≈ 8%.
+- Headcount rose slightly (+1%) but identified-customer revenue fell ~2.7%; retained customers spent ~8% less.
 <img width="623" height="463" alt="CustomerPareto" src="https://github.com/user-attachments/assets/9d5bc9fd-1d28-4400-9ac3-21c4b976bfaa" />
+- Pareto: revenue by customer percentile. Caption: show share of revenue by top X% and mark top-2% and top-20%.
 
-#### B. Churn, Acquisition & Cohort Revenue Impact
+### 4.2 Churn / cohort revenue impact
 
-Headline: Net customer churn and cohort-level revenue shifts show value loss despite similar headcount.
+Takeaway: Net headcount masks an erosion of cohort value — losing high-value customers drove revenue decline.
 
-- The store lost 1,526 existing customers and acquired 1,582 new customers in Year 2; however, many of the churned customers were high-value (76 from prior Year1 top 20%, 5 from top 2%).
-- Although new customers generated revenue (~£1,350k), identified-customer revenue declined ~2.7% YoY; retained customers spent ~8% less in Year 2, and Year1 top-20% spent ~13.76% less (~£768k loss).
-- Net effect: headcount stability masks an erosion in customer value—retention (and re-engagement) of high-value cohorts is critical.
+- Lost 1,526 customers (35.8%) and acquired 1,582 new customers;  many of the churned customers were high-value (76 from prior Year1 top 20%, 5 from top 2%).
 
 <img width="627" height="280" alt="RevenueWaterfall" src="https://github.com/user-attachments/assets/0dec4c6e-8e7a-4e5e-86b1-bcf958cb4618" />
 
-#### C. Anonymous (Non-identified) Customer Impact
+- Although new customers generated revenue (~£1,350k), identified-customer revenue declined ~2.7% YoY; retained customers spent ~8% less in Year 2, and Year1 top-20% spent ~13.76% less (~£768k loss).
 
-Headline: Growing share of anonymous transactions increases revenue uncertainty and limits retention actions.
+### 4.3 Anonymous (non-identified) customers
 
-- Non-identified transactions rose to 24.5% of transactions in Year 2 (from 19.5% in Year 1); their revenue share rose to ~15.14% (from 11.58%).
-- Anonymous customers in the second year show a 57% higher Average Order Value, reaching £1,032.50, which is higher than the AOV of Elite customers (£931.20). This suggests that anonymity does not equate to low-value behavior; on the contrary, it may represent a missed opportunity for customer identification and targeted nurturing.
-- Business implication: reducing anonymous transactions or capturing identifiers will unlock targeted marketing and repeat-purchase strategies.
+Takeaway: Rising anonymous share is a missed growth & measurement opportunity.
 
-  <img width="850" height="169" alt="image" src="https://github.com/user-attachments/assets/e7947317-c3e5-4f0e-a404-c083750c8a44" />
+- Anonymous transactions ↑ 24.5% of transactions (Year 2); revenue share ≈ 15.14%.
+- Anonymous AOV (£1,032.50) > Elite AOV (£931.20).
 
-#### D. Seasonality & Customer Behavior Patterns
+<img width="850" height="169" alt="image" src="https://github.com/user-attachments/assets/e7947317-c3e5-4f0e-a404-c083750c8a44" />
 
-Headline: Strong seasonality (Fall/November peak) and heterogeneous buyer types complicate one-size-fits-all segmentation.
+### 4.4 Seasonality & buyer heterogeneity
 
-- Fall accounts for ~36.9% of revenue with a November peak; other seasons average ≈21% each, and Fall also shows spikes in customers and transactions.
-- Many top customers are wholesalers with diverse buying rhythms (frequent small orders, periodic bulk orders, or seasonal-only purchases).
-- Implication: basic RFM alone is insufficient — wholesalers distort frequency/recency signals and require behavior-aware segmentation.
+Takeaway: Fall (Nov) spike suggests seasonal playbook; wholesaler behaviors distort simple RFM.
 
+- Fall ≈ 36.9% revenue, November peak; wholesalers show diverse frequency patterns that reduce RFM effectiveness.
+- Implication: Use behavior-aware segmentation (wholesale vs retail; seasonal buyers) rather than plain RFM.
 <img width="627" height="309" alt="RevenueSeasonal" src="https://github.com/user-attachments/assets/0edf021a-6caf-4de8-ad45-3c1184d2258d" />
 
-#### E. Product Revenue Concentration & SKU Dependence
+### 4.5 Product concentration & SKU risk
 
-Headline: Sales are concentrated in a small subset of SKUs—product portfolio risk mirrors customer concentration.
+Takeaway: Product portfolio is as concentrated as the customer base — SKU risk is significant.
 
-- 4,737 SKUs sold over two years; top 5% of SKUs generate ~45.5% of revenue, top 20% generate ~78%, bottom 50% only ~4.6%.
-- The store is dependent on a narrow product set for revenue—SKU-level failures or stockouts could have large revenue implications.
+- 4,737 SKUs sold; top 5% SKUs ≈ 45.5% revenue; top 20% ≈ 78%.
+- SKU Pareto and list of Top-20 SKUs with revenue share.
 
 <img width="623" height="463" alt="ProductPareto" src="https://github.com/user-attachments/assets/2cd9a7f1-1a42-4061-8f98-15c15cd8675a" />
 
-## RESULT
+### 4.6 Promo & cancellation signals
 
-The Year-2 segment metrics show a clear performance gradient across customer tiers. VIPs drive overwhelmingly higher value, marked by extremely frequent purchases, high monetary contribution, broad product variety, and the shortest repurchase cycle. Elite customers follow with strong but substantially lower spend and frequency. Premium buyers maintain moderate purchase activity and product diversity, while Mass customers contribute minimally across all dimensions.
+Takeaway: Promo usage is limited and uneven; cancellations are common but not the primary churn driver.
 
-<img width="928" height="121" alt="image" src="https://github.com/user-attachments/assets/34280638-9db5-4651-8ca7-8e85b60d2b6a" />
-
-## WHY?
-
-#### A. Discounting & Promotional Usage
-
-Headline: Discounting is rarely used and concentrated in a few customers; promotional coverage is minimal.
-
-- Only 55 customers used discounts, indicating very limited discount activity. The targeting doesn't appear to have been planned carefully, yet a surprisingly large number of mass customers still received discounts—more than those in the elite segment.
-- Low promotional penetration suggests missed opportunities for targeted offers to retain or reactivate specific cohorts.
+- Only 55 customers had recorded discounted transactions — low promotional coverage.
+- Cancellation rates high across segments (e.g., VIP ~94% have at least one cancellation). Cancellation revenue largely concentrated in customers with stable revenue histories — suggests cancellations are not the main churn cause.
 
 <img width="627" height="343" alt="DiscountChart" src="https://github.com/user-attachments/assets/a19c0658-bc9d-4b3d-9148-b65d8ba94692" />
 
-#### B. Segment-Specific Behavioral Insight (Hibernating Customers)
+### 4.7 Segment-Specific Behavioral Insight (Hibernating Customers)
 
 Headline: Hibernating customers concentrate spend in low-value categories, potentially explaining churn.
 
 - “Hibernating” cohort spends predominantly on the “Bottom” product category across months in Year 1.
 - Customers flagged as having “Unknown” frequency behavior—those who purchase fewer than five times—allocate most of their spending to Mid-tier and Bottom-tier products.
 - In contrast, Premium, Elite, and VIP segments direct the majority of their spending toward Top-tier products, indicating a clear value stratification across behavioral groups.
-- Possible interpretation: low-ticket purchasing mix reduces engagement and increases likelihood of churn when product relevance or availability declines.
 
 [Download the Power BI file](./InteractiveChart.pbix)
 
-#### C. Cancellations & Returns — Distribution and Impact
+### 4.8 Cancellations & Returns — Distribution and Impact
 
 Headline: Cancellations are widespread across segments but do not appear to be the primary driver of customer loss.
 
@@ -118,59 +124,28 @@ Headline: Cancellations are widespread across segments but do not appear to be t
 <img width="627" height="376" alt="CancellationStackedBarChart" src="https://github.com/user-attachments/assets/8a722d25-8fbd-49e5-8b04-1e5f40b25816" />
 
 - Categorizing cancellation revenue: 71.18% of cancellation revenue loss falls into a “good” group (customers with stable or inclining revenue), 25.82% in the “bad” group (lost/customers with declining revenue), 3% others.
-
-<img width="591" height="504" alt="CancellationPieChart" src="https://github.com/user-attachments/assets/071436d4-5480-49cc-964b-13c4d4eab5e3" />
-
 - Conclusion: cancellations alone are unlikely to explain most customer churn; other factors (value decline, competition, product fit) are likely contributors.
 
-## 5. RECOMMENDATION
+## 5. Recommendations (short action summary)
 
-### A. Marketing Campaign
-#### Segment-Status-Behavior Campaign
+Action summary (top priorities):
 
-#### Seasonality Campaign
-Objective: Maximize margin and long-term value during the Fall peak without unnecessary margin erosion.
+1. Protect and grow top cohorts — targeted retention campaigns for top‑20% (and VIP/Elite). Use holdout tests and measure incremental LTV.
+2. Convert anonymous buyers — low-friction capture (email/receipt, registration incentives) to unlock targeted marketing.
+3. Data & pipeline fixes — canonical product & customer masters, discount flag, cancellation linking, ETL dedupe & identifier normalization.
+4. Behavior-aware segmentation — separate wholesalers and seasonal buyers; use product propensity for offer targeting.
 
-Why: Fall (Nov peak) accounts for a major share of revenue—opportunities for upsell, acquisition, and reactivation are highest then.
+Full recommendations and campaign playbook are in Recommendation.md (detailed campaign table + sample offers + KPIs).
 
-Promotions framework: use tiered incentives (e.g., free shipping threshold, bundle discounts) rather than across-the-board percent-off to preserve margin.
-Measurement: incremental revenue during campaign vs. expected baseline, mix shift to Top products, margin impact per campaign. Use holdout/control geography or customer sample to measure true lift.
+## 6. Methodology / How to reproduce / Limitations / Metric definitions
+- Repro environment: notebooks in /notebooks (Jupyter / Colab) — replace with ["Tools used"].
+- Data sources: transactional CSV in /data — replace with actual path or S3 location.
+- How to reproduce: run notebooks/00_data_prep.ipynb → 01_segmentation.ipynb → 02_insights.ipynb (or run the provided pipeline). See requirements.txt / environment.yml for package list. [Replace placeholder with actual files/tools].
+- Limitations: missing / noisy identifiers, limited promo metadata, inconsistent SKU descriptions & unit prices across rows, partial cancellation linkage.
+- Metric definitions: include short definitions (Revenue = sum(UnitPrice × Quantity), AOV = revenue / orders, Retained customer = customer with transactions in both periods, etc.) — expand in a separate section if needed.
 
-#### Measurement & Experimentation Framework
-Objective: Require A/B testing, uplift measurement, and clear KPIs for all major campaigns.
+## 7. Additional files & artifacts
+- Recommendation.md — detailed campaign and measurement playbook.
+- /notebooks — reproducible analysis (notebooks) — [placeholder: add actual notebook filenames].
+- InteractiveChart.pbix — Power BI dashboard (links to downloadable file). Note: embedding interactive .pbix inside .md is not supported — provide a downloadable link or publish to Power BI Service and link.
 
-Why: Prevents wasted marketing spend and clarifies which tactics actually move the business metrics.
-Tactics:
-- Use holdout groups / randomized assignment for retention and acquisition campaigns.
-- Measure both short-term (AOV, conversion) and medium-term (repeat purchase, CLV) impact.
-- Track incremental revenue and margin impact, not only redemption counts.
-KPIs: incremental revenue per cohort, incremental profit, LTV uplift, lift confidence intervals.
-
-### B. Convert Anonymous Buyer
-
-Objective: Reduce anonymous transactions and capture identifiers so customers can be targeted and measured.
-
-Why: Anonymous customers grew to ~24.5% of transactions and contributed >15% of revenue; their AOV can exceed Elite AOV — a sizeable missed opportunity if left anonymous.
-Tactics (example):
-- Low-friction incentives to register (e.g., one-time account signup incentive: tracked £10 voucher, or account registration with expedited checkout).
-- Post-purchase capture: offer digital receipts, order tracking, or loyalty points in exchange for an email/phone.
-- Incentivize with high-value offers for first tracked purchase to encourage future identification.
-
-KPIs / Next steps: % transactions with identifier, conversion rate from anonymous → identified, AOV and repeat purchase rate of newly identified customers.
-
-### C. Product-level Growth Levers
-
-Objective: Increase revenue by promoting Top products to cohorts likely to convert higher AOV.
-
-Why: Revenue is concentrated in a small set of products; aligning product promotions to segment propensity increases conversion efficiency.
-Tactics:
-
-Target New customers and “Unknown” frequency customers with Top-product trial bundles + cross-sell recommendations.
-
-KPIs: uplift in Top-product penetration, AOV change, attach rate of cross-sell items.
-
-### D. Data & Analytics Pipeline Improvements
-
-Objective: Improve data quality, tracking and schema to enable reliable segmentation, attribution, and personalization.
-
-Why: Current issues (high anonymous share, limited discount tracking, cancellation linkages) block accurate cohort measurement and campaign targeting. Clean, consistent data is required to execute and measure recommendations.

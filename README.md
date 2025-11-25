@@ -1,4 +1,4 @@
-# Data-Analyst-Project
+# Customer Value & Retention Analysis for a UK Online Retailer
 Exploratory data analysis for an online store based in UK.
 
 ---

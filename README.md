@@ -165,6 +165,6 @@ Full recommendations and campaign playbook are in [RECOMMENDATION_SHEET.md](./RE
 
 ## 7. Additional files & artifacts
 - Recommendation.md — detailed campaign and measurement playbook.
-- /notebooks — reproducible analysis (notebooks) — [placeholder: add actual notebook filenames].
-- InteractiveChart.pbix — Power BI dashboard (links to downloadable file). Note: embedding interactive .pbix inside .md is not supported — provide a downloadable link or publish to Power BI Service and link.
+- /notebooks — reproducible analysis (notebooks) — 
+- InteractiveChart.pbix — Power BI dashboard (links to downloadable file).
 

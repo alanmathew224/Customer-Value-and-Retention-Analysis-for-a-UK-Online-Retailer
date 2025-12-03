@@ -1,6 +1,11 @@
 # Customer Value & Retention Analysis for a UK Online Retailer
 Exploratory data analysis for an online store based in UK.
 
+Dataset Notice:
+The dataset is not stored in this repository due to size constraints.
+You can download it here:
+[Retail Online Dataset – Google Drive](https://docs.google.com/spreadsheets/d/10V5B0B5Hi9FnMQBwXdCTb2KGwBn3VDtF/edit?usp=sharing&ouid=115572422267824839911&rtpof=true&sd=true)
+
 ---
 
 ## TL;DR
@@ -166,7 +171,9 @@ Full recommendations and campaign playbook are in [RECOMMENDATION_SHEET.md](./RE
 ---
 
 ## 7. Additional files & artifacts
-- Recommendation.md — detailed campaign and measurement playbook.
-- /notebooks — reproducible analysis (notebooks) — 
-- InteractiveChart.pbix — Power BI dashboard (links to downloadable file).
+- [Retail Online Dataset – Google Drive](https://docs.google.com/spreadsheets/d/10V5B0B5Hi9FnMQBwXdCTb2KGwBn3VDtF/edit?usp=sharing&ouid=115572422267824839911&rtpof=true&sd=true) — original dataset.
+- [RECOMMENDATION.md](./RECOMMENDATION.md) — detailed campaign and measurement playbook.
+- /notebooks — reproducible analysis (notebooks)
+- [InteractiveChart.pbix](./InteractiveChart.pbix) — Power BI dashboard.
+- [CHEATSHEET.md](./CHEATSHEET.md) — Cheatsheet for the code.
 

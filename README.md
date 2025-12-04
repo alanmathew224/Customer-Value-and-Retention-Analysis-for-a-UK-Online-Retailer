@@ -171,9 +171,10 @@ Full recommendations and campaign playbook are in [RECOMMENDATION_SHEET.md](./RE
 ---
 
 ## 7. Additional files & artifacts
-- [Retail Online Dataset – Google Drive](https://docs.google.com/spreadsheets/d/10V5B0B5Hi9FnMQBwXdCTb2KGwBn3VDtF/edit?usp=sharing&ouid=115572422267824839911&rtpof=true&sd=true) — original dataset.
-- [RECOMMENDATION_SHEET.md](./RECOMMENDATION_SHEET.md) — detailed campaign and measurement playbook.
-- /notebooks — reproducible analysis (notebooks)
-- [InteractiveChart.pbix](./InteractiveChart.pbix) — Power BI dashboard.
-- [CHEATSHEET.md](./CHEATSHEET.md) — Cheatsheet for the code.
+- [Retail Online Dataset – Google Drive](https://docs.google.com/spreadsheets/d/10V5B0B5Hi9FnMQBwXdCTb2KGwBn3VDtF/edit?usp=sharing&ouid=115572422267824839911&rtpof=true&sd=true) — original dataset used in the analysis. Stored externally due to GitHub size limitations.
+- [RECOMMENDATION_SHEET.md](./RECOMMENDATION_SHEET.md) — comprehensive campaign and measurement playbook, including segment-level tactics, KPIs, channels, and offer frameworks.
+- [UK_online_retail_analysis.ipynb](./UK_online_retail_analysis.ipynb) — fully reproducible notebook covering data preparation, exploratory analysis, segmentation logic, and metric calculations.
+- [UK_Retail_InteractiveDashboard.pbix](./InteractiveChart.pbix) — interactive Power BI dashboard for deep-dive exploration of customer behavior, segment performance, product mix, and seasonality patterns.
+- [CHEATSHEET.md](./CHEATSHEET.md) — quick-reference guide summarizing segment definitions, thresholds, behavioral flags, and value tiers used in this project.
+- [metrics_overview_full.xlsx](./metrics_overview_full.xlsx) — full metrics table for all customer segments, products, and behavioral cohorts, useful for verification, audit, or further analysis.
 
